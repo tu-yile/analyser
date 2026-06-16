@@ -1,0 +1,4 @@
+interface:
+  display_name: "A股午间盘面复盘"
+  short_description: "每日十二点三十分复盘上午盘面并形成下午行情观察框架"
+  default_prompt: "Use $a-share-midday-review to review this morning’s A-share session and frame the afternoon watchlist."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "A股上下文Rollover"
+  short_description: "独立执行A股上下文日终周终归档清理与recent维护流程"
+  default_prompt: "Use $a-share-context-rollover to run A-share context day-end, week-end, or recent cleanup rollover."
