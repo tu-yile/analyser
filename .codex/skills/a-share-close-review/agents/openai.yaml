@@ -1,4 +1,0 @@
-interface:
-  display_name: "A股收盘全日复盘"
-  short_description: "每日十五点十分分析下午走势并总结全天市场结构与次日线索"
-  default_prompt: "Use $a-share-close-review to analyze the afternoon A-share session and produce a full-day market review."

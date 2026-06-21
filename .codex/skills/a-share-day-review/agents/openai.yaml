@@ -1,0 +1,3 @@
+interface:
+  display_name: "A股日内盘面复盘"
+  short_description: "每日日内的盘面复盘并形成后续的行情观察框架"
