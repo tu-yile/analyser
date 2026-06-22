@@ -23,7 +23,7 @@ function usage(): string {
     "  --chat-id <id>      Feishu chat_id. Defaults to LARK_CHAT_ID.",
     "  --user-id <id>      Feishu open_id. Defaults to LARK_USER_ID.",
     "  --title <text>      Optional heading prepended to the message.",
-    "  --mode <text|card>  Send plain markdown text or an interactive card. Defaults to text.",
+    "  --mode <text|card>  Send plain markdown text or an interactive card. Defaults to card.",
     "  --max-length <n>    Text chunk size for text mode. Defaults to 1400.",
   ].join("\n");
 }
@@ -32,7 +32,7 @@ function readArgs(argv: string[]): CliArgs {
   const args: CliArgs = {
     chatId: process.env.LARK_CHAT_ID,
     userId: process.env.LARK_USER_ID,
-    mode: "text",
+    mode: "card",
     maxLength: Number(process.env.LARK_MAX_REPLY_CHUNK_LENGTH || 1400),
   };
 

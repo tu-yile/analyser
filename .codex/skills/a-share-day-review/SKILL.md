@@ -104,5 +104,3 @@ description: 复盘A股当日交易的指数、量能、市场广度、板块轮
 最终报告生成一份 Markdown 文件，并保存为 `data/history/reports/${YYYY-MM-DD}/day-review-${HH:mm}.md`
 
 然后基于这份分析报告并按照`data/context/today.md`的规则对 `data/context/today.md`进行更新，为当天后续的盘面分析提供基础
-
-如果分析范围的终止在当日的收盘时间后（15:00及以后），则结合`data/context/today.md`内容以及本次分析报告，对`data/context/week.md`进行更新，之后再清空`data/context/today.md`的内容部分

@@ -16,6 +16,8 @@ npm run gateway:start
 
 运行数据默认写入 `.gateway/`。可通过 `ALLOWED_OPEN_IDS` 限制允许访问网关的飞书用户，通过 `WORKSPACE_ROOTS` 限制可绑定的工作目录；两个变量均使用逗号分隔。
 
+网关默认使用 Markdown 消息发送进度和结果。需要恢复交互卡片时，可在启动前设置 `STREAMING_MODE=cardkit`。
+
 安装依赖：
 
 ```bash
@@ -41,4 +43,4 @@ export LARK_CHAT_ID=<chat_id>
 npm run send:lark -- --file reports/2026-06-18-a-share-overnight-brief.md
 ```
 
-发送给单个用户时使用 `--user-id <open_id>` 或 `LARK_USER_ID`。默认以 markdown 文本发送；如需交互卡片，追加 `--mode card`。
+发送给单个用户时使用 `--user-id <open_id>` 或 `LARK_USER_ID`。报告默认以飞书交互卡片发送；如需普通 Markdown 消息，追加 `--mode text`。
