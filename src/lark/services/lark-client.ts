@@ -29,7 +29,7 @@ export class LarkClient {
     try {
       const output = await runLarkCli(["auth", "status"]);
       const payload = parseJsonOrNull(output);
-      return payload?.userOpenId ?? "";
+      return payload?.userOpenId ?? payload?.identities?.user?.openId ?? "";
     } catch (_error) {
       const fallbackOutput = await runLarkCli(["auth", "list"]);
       const payload = parseJsonOrNull(fallbackOutput);
@@ -292,7 +292,8 @@ export class LarkClient {
   }
 
   startEventStream({ filter, onEvent, onError, onExit }: LarkEventStreamOptions) {
-    const spec = createSpawnSpec(["event", "+subscribe", "--as", "bot", "--force", "--filter", filter]);
+    const eventKey = filter.replace(/^\^/, "").replace(/\$$/, "").replace(/\\\./g, ".");
+    const spec = createSpawnSpec(["event", "consume", eventKey, "--as", "bot", "--quiet"]);
     const child = spawn(spec.command, spec.args, {
       cwd: process.cwd(),
       env: process.env,

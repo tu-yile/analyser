@@ -6,6 +6,16 @@
 
 `src/lark/` 已接入来自 `/Users/tuyile/project/tyl_investment/src/lark` 的飞书访问封装，基于本机 `lark-cli` 发送文本、交互卡片和监听事件。
 
+启动常驻网关：
+
+```bash
+npm run gateway:start
+```
+
+使用 `npm run gateway:status` 查看状态，使用 `npm run gateway:stop` 停止。前台调试可运行 `npm run gateway`。
+
+运行数据默认写入 `.gateway/`。可通过 `ALLOWED_OPEN_IDS` 限制允许访问网关的飞书用户，通过 `WORKSPACE_ROOTS` 限制可绑定的工作目录；两个变量均使用逗号分隔。
+
 安装依赖：
 
 ```bash
