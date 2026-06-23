@@ -16,7 +16,8 @@
     "gateway:start": "npm run build --silent && bash scripts/lark_gateway_daemon.sh start",
     "gateway:stop": "bash scripts/lark_gateway_daemon.sh stop",
     "gateway:status": "bash scripts/lark_gateway_daemon.sh status",
-    "send:lark": "npm run build --silent && node dist/scripts/send_lark_report.js"
+    "send:lark": "npm run build --silent && node dist/scripts/send_lark_report.js",
+    "send:lark:collapsible": "npm run build --silent && node dist/scripts/send_lark_report.js --mode collapsible-card"
   },
   "dependencies": {
     "@larksuite/cli": "^1.0.4"

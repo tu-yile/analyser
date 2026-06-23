@@ -2,7 +2,12 @@ import { spawn } from "node:child_process";
 import readline from "node:readline";
 import type { JsonObject, LarkEventStreamOptions, LoggerLike } from "../types/lark-types.js";
 import { createSpawnSpec, parseJsonOrNull, runLarkCli } from "../adapters/lark-cli-exec.js";
-import { buildCompletedCard, buildStreamingCard, stripStatusCorner } from "../renderers/lark-card-builder.js";
+import {
+  buildCollapsibleMarkdownCard,
+  buildCompletedCard,
+  buildStreamingCard,
+  stripStatusCorner,
+} from "../renderers/lark-card-builder.js";
 import { normalizeTarget } from "../adapters/lark-target.js";
 
 /**
@@ -267,6 +272,15 @@ export class LarkClient {
 
   buildCardKitCompletedCard(text: string): JsonObject {
     return buildCompletedCard(text);
+  }
+
+  buildCollapsibleMarkdownCard(input: {
+    markdown: string;
+    title?: string;
+    panelTitle?: string;
+    expanded?: boolean;
+  }): JsonObject {
+    return buildCollapsibleMarkdownCard(input);
   }
 
   async recallMessage(messageId: string | null): Promise<void> {

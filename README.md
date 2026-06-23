@@ -44,3 +44,12 @@ npm run send:lark -- --file reports/2026-06-18-a-share-overnight-brief.md
 ```
 
 发送给单个用户时使用 `--user-id <open_id>` 或 `LARK_USER_ID`。报告默认以飞书交互卡片发送；如需普通 Markdown 消息，追加 `--mode text`。
+
+将 Markdown 报告放入默认折叠的面板中发送：
+
+```bash
+npm run send:lark:collapsible -- --file reports/example.md --chat-id <chat_id> \
+  --title "盘面分析" --panel-title "点击查看完整报告"
+```
+
+追加 `--expanded true` 可让面板默认展开。

@@ -58,3 +58,64 @@ export function buildCompletedCard(text: string): JsonObject {
     },
   };
 }
+
+export function buildCollapsibleMarkdownCard({
+  markdown,
+  title = "Markdown 报告",
+  panelTitle = "点击展开完整内容",
+  expanded = false,
+}: {
+  markdown: string;
+  title?: string;
+  panelTitle?: string;
+  expanded?: boolean;
+}): JsonObject {
+  return {
+    schema: "2.0",
+    config: {
+      wide_screen_mode: true,
+    },
+    header: {
+      template: "blue",
+      title: {
+        tag: "plain_text",
+        content: title,
+      },
+    },
+    body: {
+      elements: [
+        {
+          tag: "collapsible_panel",
+          element_id: "markdown_panel",
+          expanded,
+          header: {
+            title: {
+              tag: "markdown",
+              content: `**${panelTitle}**`,
+            },
+            vertical_align: "center",
+            icon: {
+              tag: "standard_icon",
+              token: "down-small-ccm_outlined",
+              size: "16px 16px",
+            },
+            icon_position: "right",
+            icon_expanded_angle: -180,
+          },
+          border: {
+            color: "grey",
+            corner_radius: "5px",
+          },
+          vertical_spacing: "8px",
+          padding: "8px 8px 8px 8px",
+          elements: [
+            {
+              tag: "markdown",
+              content: markdown || "无内容",
+            },
+          ],
+        },
+      ],
+    },
+  };
+}
