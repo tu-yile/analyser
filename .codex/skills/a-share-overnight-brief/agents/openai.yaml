@@ -1,4 +1,0 @@
-interface:
-  display_name: "A股隔夜外围与重大事件晨报"
-  short_description: "每日早上八点梳理隔夜外围市场、重大事件与A股盘前映射"
-  default_prompt: "Use $a-share-overnight-brief to analyze overnight global markets, major overnight events, and their likely impact on today’s A-share session."

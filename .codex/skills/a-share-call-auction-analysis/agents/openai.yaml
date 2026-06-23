@@ -1,4 +1,0 @@
-interface:
-  display_name: "A股集合竞价分析"
-  short_description: "每日九点二十五分解读集合竞价强弱、市场广度与开盘主线"
-  default_prompt: "Use $a-share-call-auction-analysis to analyze today’s A-share opening call auction at 09:25."
