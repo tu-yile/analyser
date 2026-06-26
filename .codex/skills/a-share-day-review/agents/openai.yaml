@@ -1,0 +1,3 @@
+interface:
+  display_name: "A股日内盘面复盘"
+  short_description: "宽筛盘面并结合持仓输出市场状态和操作决策"

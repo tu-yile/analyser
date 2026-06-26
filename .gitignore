@@ -2,5 +2,3 @@ node_modules/
 dist/
 .runtime/
 .gateway/
-.codex/skills/
-AGENTS.md
