@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json",
+    "day-report:briefs": "npm run build --silent && node dist/scripts/day_report_briefs.js",
     "gateway": "npm run build --silent && node dist/src/gateway/index.js",
     "gateway:start": "npm run build --silent && bash scripts/lark_gateway_daemon.sh start",
     "gateway:stop": "bash scripts/lark_gateway_daemon.sh stop",
